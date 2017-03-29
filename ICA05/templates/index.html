@@ -1,29 +1,49 @@
-
-<h1><span style="color: #0000ff;">V&aelig;r for hver og en</span></h1>
-<p style="text-align: left;"><span style="color: #0000ff;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="color: #808080;">-En side som viser v&aelig;ret for folk flest i Norge</span></span></p>
-<p style="text-align: left;">&nbsp;</p>
-<h4 style="text-align: left;"><span style="color: #000000;">Kristiansand</span></h4>
-<script src="http://www.yr.no/sted/Norge/Vest-Agder/Kristiansand/Kristiansand/ekstern_boks_time_for_time.js"></script><noscript><a href="http://www.yr.no/sted/Norge/Vest-Agder/Kristiansand/Kristiansand/">yr.no: VÊrvarsel for Kristiansand</a></noscript>
-<h4><span style="color: #000000;">Oslo</span></h4>
-<script src="http://www.yr.no/sted/Norge/Oslo/Oslo/Oslo/ekstern_boks_time_for_time.js"></script><noscript><a href="http://www.yr.no/sted/Norge/Oslo/Oslo/Oslo/">yr.no: VÊrvarsel for Oslo</a></noscript>
-<h4>Trondheim</h4>
-<script src="http://www.yr.no/sted/Norge/S¯r-Tr¯ndelag/Trondheim/Trondheim/ekstern_boks_time_for_time.js"></script><noscript><a href="http://www.yr.no/sted/Norge/S¯r-Tr¯ndelag/Trondheim/Trondheim/">yr.no: VÊrvarsel for Trondheim</a></noscript><h4>Bergen</h4>
-<script src="http://www.yr.no/sted/Norge/Hordaland/Bergen/Bergen/ekstern_boks_time_for_time.js"></script><noscript><a href="http://www.yr.no/sted/Norge/Hordaland/Bergen/Bergen/">yr.no: VÊrvarsel for Bergen</a></noscript>
-<p>&nbsp;</p>
-
-
 <!DOCTYPE html>
 <html>
   <head>
+      <meta charset="utf-8">
+      <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <style>
-      #map {
-        height: 500px;
-        width: 50%;
-       }
+        body{
+            padding: 0;
+            margin: 0;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+        .header{
+            background-color: #000000;
+            padding: 10px 0 10px 0;
+            text-align: center;
+            color: #ffffff;
+        }
+        #weatherreport{
+            text-align: center
+        }
+        
+        #map {
+            height: 500px;
+            width: 50%;
+            margin: 0 auto 0 auto;
+        }
     </style>
   </head>
   <body>
-    <h3>My Google Maps Demo</h3>
+      
+    <div class="header">
+      <h1>IT-Gruppa Ottar</h1>
+      </div>
+      
+<p style="text-align: left;"><span style="color: #0000ff;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="color: #808080;">En side som viser v√¶ret for folk flest i Norge</span></span></p>
+<p style="text-align: left;">&nbsp;</p>
+<h4 style="text-align: left;"><span style="color: #000000;">Kristiansand</span></h4>
+<script src="http://www.yr.no/sted/Norge/Vest-Agder/Kristiansand/Kristiansand/ekstern_boks_time_for_time.js"></script><noscript><a href="http://www.yr.no/sted/Norge/Vest-Agder/Kristiansand/Kristiansand/">yr.no: V√¶rvarsel for Kristiansand</a></noscript>
+<h4><span style="color: #000000;">Oslo</span></h4>
+<script src="http://www.yr.no/sted/Norge/Oslo/Oslo/Oslo/ekstern_boks_time_for_time.js"></script><noscript><a href="http://www.yr.no/sted/Norge/Oslo/Oslo/Oslo/">yr.no: V√¶rvarsel for Oslo</a></noscript>
+<h4>Trondheim</h4>
+<script src="http://www.yr.no/sted/Norge/S√∏r-Tr√∏ndelag/Trondheim/Trondheim/ekstern_boks_time_for_time.js"></script><noscript><a href="http://www.yr.no/sted/Norge/S√∏r-Tr√∏ndelag/Trondheim/Trondheim/">yr.no: V√¶rvarsel for Trondheim</a></noscript><h4>Bergen</h4>
+<script src="http://www.yr.no/sted/Norge/Hordaland/Bergen/Bergen/ekstern_boks_time_for_time.js"></script><noscript><a href="http://www.yr.no/sted/Norge/Hordaland/Bergen/Bergen/">yr.no: V√¶rvarsel for Bergen</a></noscript>
+<p>&nbsp;</p>
+      
+      
     <div id="map"></div>
     <script>
       function initMap() {
