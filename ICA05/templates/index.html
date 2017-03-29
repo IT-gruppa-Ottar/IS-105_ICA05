@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ICA05</title>
+    <style>
+        h1{
+            color:#F442e5
+        }
+    </style>
+</head>
+<h1>VÃ¦r for hver og en</h1>
+<body>
+    <h1>By {{ .Name }}</h1>
+    <h2>Hobbies {{ .Hobbies}}</h2>
+</body>
+</html>
+
+<h3> test <h3>
+
+<h1><span style="color: #0000ff;">V&aelig;r for hver og en</span></h1>
+<table style="height: 251px;" width="499">
+<tbody>
+<tr>
+<td><strong>Land</strong></td>
+<td><strong>By</strong></td>
+<td><strong>V&aelig;r</strong></td>
+<td><strong>Vind</strong></td>
+<td><strong>Nedb&oslash;r</strong></td>
+</tr>
+<tr>
+<td>
+<p>Norge</p>
+</td>
+<td>Kristiansand</td>
+<td>Sol, delvis skyet</td>
+<td>4m/s</td>
+<td>0,3</td>
+</tr>
+<tr>
+<td>Norge</td>
+<td>Oslo</td>
+<td>Liten Storm</td>
+<td>13m/s</td>
+<td>0,9</td>
+</tr>
+</tbody>
+</table>
+
+<script src="http://www.yr.no/sted/Norge/Vest-Agder/Kristiansand/Kristiansand/ekstern_boks_stripe.js"></script><noscript><a href="http://www.yr.no/sted/Norge/Vest-Agder/Kristiansand/Kristiansand/">yr.no: Værvarsel for Kristiansand</a></noscript>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #map {
+        height: 500px;
+        width: 50%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: 60.47202399999999, lng: 8.46894599999996};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVtXYyPvWlKptp3EH0FMEdyAWFklMO6JM&callback=initMap">
+    </script>
+  </body>
+</html>
