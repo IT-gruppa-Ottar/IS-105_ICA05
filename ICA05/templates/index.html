@@ -15,9 +15,17 @@
         }
         .header{
             background-color: #000000;
-            padding: 10px 0 10px 0;
+            padding: 10px 0 5px 0;
             text-align: center;
             color: #ffffff;
+        }
+        
+        .header p {
+            font-size: 14px;
+        }
+        
+        .klokke{
+            padding-top: 25px;
         }
         #weatherreport{
             text-align: center
@@ -29,10 +37,32 @@
             margin: 0 auto 0 auto;
         }
         
+        .tabellcontainer{
+            padding-top: 15px;
+        }
+        #tabell{
+            border: 1px solid black;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-width: 1px;
+            border-radius: 5px;
+            background-color: #f7e7cd;
+        }
+        
+        #tabell tr{
+            font-size: 18px;
+        }
+        
+        #tabell tr th{
+            padding: 0 50px 0 50px;
+        }
+      
+        
         footer{
             background-color: #000000;
             color: #ffffff;
             padding: 5px 0 5px 0;
+            margin: 0;
         }
     </style>
   </head>
@@ -40,18 +70,44 @@
       
     <div class="header">
       <h1>IT-Gruppa Ottar</h1>
+        <p>En side som viser været for folk flest i Norge</p>
       </div>
-      
-<p>En side som viser været for folk flest i Norge</p></br>
     
+      
+      <div class="tabellcontainer">
+    <table id="tabell" align="center">
+        <tr>
+            <th>Valuta</th>
+            <th>Rate</th>
+        </tr>
+
+        <tr>
+            <th> GBP </th>
+            <th> {{ .Rates.GBP }} </th>
+        </tr>
+
+        <tr>
+            <th> USD </th>
+            <th> {{ .Rates.USD }} </th>
+        </tr>
+
+        <tr>
+            <th> EUR </th>
+            <th> {{ .Rates.EUR }} </th>
+        </tr>
+    </table>
+        </div>
+    
+    <div class="klokke">
     <iframe src="http://free.timeanddate.com/clock/i5njgau9/n1371/szw110/szh110/hocddd/hbw0/hfc000/cf100/hgr0/fav0/fiv0/mqcfff/mql15/mqw8/mqd100/mhcfff/mhl15/mhw4/mhd100/mmv0/hhcff9/hmcff9" frameborder="0" width="110" height="110"></iframe>
+        </div>
 
     
 <h4>Kristiansand</h4>
 <script src="http://www.yr.no/sted/Norge/Vest-Agder/Kristiansand/Kristiansand/ekstern_boks_time_for_time.js"></script>
 <noscript><a href="http://www.yr.no/sted/Norge/Vest-Agder/Kristiansand/Kristiansand/">yr.no: Værvarsel for Kristiansand</a></noscript>
       
-<h4><span style="color: #000000;">Oslo</span></h4>
+<h4>Oslo</h4>
 <script src="http://www.yr.no/sted/Norge/Oslo/Oslo/Oslo/ekstern_boks_time_for_time.js"></script>
 <noscript><a href="http://www.yr.no/sted/Norge/Oslo/Oslo/Oslo/">yr.no: Værvarsel for Oslo</a></noscript>
       
