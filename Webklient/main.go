@@ -20,9 +20,18 @@ type currencyRatings struct {
 	} `json:"rates"`
 }
 
+type Steam struct {
+	Response struct {
+		PlayerCount int `json:"player_count"`
+		Result int `json:"result"`
+	} `json:"response"`
+}
+
 func main(){
 	api1 := loadUrl("http://api.fixer.io/latest?base=NOK")
 	currency(api1)
+	api2 := loadUrl("https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v0001/?format=json&appid=0")
+	SteamPlayers(api2)
 }
 
 func loadUrl(url string) string {
@@ -43,6 +52,22 @@ func loadUrl(url string) string {
 	//fmt.Printf("%s", html)
 	content := string(html)
 	return content
+}
+
+func SteamPlayers(input string){
+	dec := json.NewDecoder(strings.NewReader(input))
+	for {
+		var c Steam
+
+		if err := dec.Decode(&c); err == io.EOF {
+			break
+		} else if err != nil {
+			log.Fatal(err)
+		}
+
+		fmt.Println("Steam Players")
+		fmt.Println( c.Response.PlayerCount)
+	}
 }
 
 //Code for currency
