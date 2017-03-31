@@ -26,12 +26,22 @@ type Steam struct {
 		Result int `json:"result"`
 	} `json:"response"`
 }
+type SpaceType struct {
+	People []struct {
+		Craft string `json:"craft"`
+		Name string `json:"name"`
+	} `json:"people"`
+	Message string `json:"message"`
+	Number int `json:"number"`
+}
 
 func main(){
 	api1 := loadUrl("http://api.fixer.io/latest?base=NOK")
 	currency(api1)
 	api2 := loadUrl("https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v0001/?format=json&appid=0")
 	SteamPlayers(api2)
+	api3 := loadUrl("http://api.open-notify.org/astros.json")
+	Space(api3)
 }
 
 func loadUrl(url string) string {
@@ -67,6 +77,22 @@ func SteamPlayers(input string){
 
 		fmt.Println("Steam Players")
 		fmt.Println( c.Response.PlayerCount)
+	}
+}
+
+func Space(input string){
+	dec := json.NewDecoder(strings.NewReader(input))
+	for {
+		var c SpaceType
+
+		if err := dec.Decode(&c); err == io.EOF {
+			break
+		} else if err != nil {
+			log.Fatal(err)
+		}
+
+		fmt.Println("People in space")
+		fmt.Println( c.Number)
 	}
 }
 
