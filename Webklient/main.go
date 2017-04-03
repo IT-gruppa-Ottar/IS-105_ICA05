@@ -43,6 +43,15 @@ type SpaceType struct {
 	Number int `json:"number"`
 }
 
+type DarkKnight struct {
+	Title    string `json:"Title"`
+	Year     string `json:"Year"`
+	Rated    string `json:"Rated"`
+	Released string `json:"Released"`
+	Runtime  string `json:"Runtime"`
+}
+
+
 func main(){
 	api1 := loadUrl("http://api.fixer.io/latest?base=NOK")
 	currency(api1)
@@ -52,6 +61,8 @@ func main(){
 	Space(api3)
 	api4 := loadUrl("http://api.bf4stats.com/api/onlinePlayers?output=json")
 	BattlefieldPlayers(api4)
+	api5 := loadUrl("http://www.omdbapi.com/?t=the+dark+knight&y=&plot=short&r=json")
+	TheDarkKnight(api5)
 }
 
 func loadUrl(url string) string {
@@ -137,5 +148,25 @@ func currency(input string){
 		}
 		fmt.Printf("Currency rates as of %q from %q\n", c.Date, c.Base)
 		fmt.Printf("USD: %.2f\nEUR: %.2f\nGBP: %.2f\n", c.Rates.USD, c.Rates.EUR, c.Rates.GBP)
+	}
+}
+
+func TheDarkKnight(input string){
+	dec := json.NewDecoder(strings.NewReader(input))
+	for {
+		var c DarkKnight
+
+		if err := dec.Decode(&c); err == io.EOF {
+			break
+		} else if err != nil {
+			log.Fatal(err)
+		}
+
+		fmt.Println("Movie Information")
+		fmt.Println("Movie Title:", c.Title)
+		fmt.Println("Rated:", c.Rated)
+		fmt.Println("Release Date", c.Released)
+		fmt.Println("Release Year", c.Year)
+
 	}
 }
