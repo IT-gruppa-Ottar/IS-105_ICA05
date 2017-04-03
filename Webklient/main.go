@@ -26,6 +26,14 @@ type Steam struct {
 		Result int `json:"result"`
 	} `json:"response"`
 }
+
+type Battlefield struct {
+	Response struct {
+		PC int `json:"count"`
+		Peak24 int `json:"peak24"`
+	} `json:"pc"`
+}
+
 type SpaceType struct {
 	People []struct {
 		Craft string `json:"craft"`
@@ -42,6 +50,8 @@ func main(){
 	SteamPlayers(api2)
 	api3 := loadUrl("http://api.open-notify.org/astros.json")
 	Space(api3)
+	api4 := loadUrl("http://api.bf4stats.com/api/onlinePlayers?output=json")
+	BattlefieldPlayers(api4)
 }
 
 func loadUrl(url string) string {
@@ -77,6 +87,24 @@ func SteamPlayers(input string){
 
 		fmt.Println("Steam Players")
 		fmt.Println( c.Response.PlayerCount)
+	}
+}
+
+func BattlefieldPlayers (input string){
+	dec := json.NewDecoder(strings.NewReader(input))
+	for {
+		var c Battlefield
+
+		if err := dec.Decode(&c); err == io.EOF {
+			break
+		} else if err != nil {
+			log.Fatal(err)
+		}
+
+		fmt.Println("Battlefield Players")
+		fmt.Println( c.Response.PC)
+		fmt.Println("Battlefield peak last 24h")
+		fmt.Println( c.Response.Peak24)
 	}
 }
 
