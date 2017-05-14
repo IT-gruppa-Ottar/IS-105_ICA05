@@ -2,7 +2,7 @@
 Overfør mappen IS-105_ICA05 til din server.
 For å åpne vår webklient:
 1. Lokaliser main.go i pakken Webklient. 
-2. Skriv inn kommandoen "go run main.go". Dette vil ta inn json data fra url-er og printe ut mindre deler av koden.
+2. Skriv inn kommandoen "go run main.go". Dette vil ta inn data fra json filer som er referert via url-er, og printer ut data på en strukturert måte.
 3. For å avslutte prosessen, trykk knappene "Ctrl + c" i serverens kommandovindu. 
 
 For å bruke vår webserver:
