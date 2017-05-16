@@ -48,7 +48,7 @@ type currencyRatings struct {
 }
 
 func main() {
-	http.HandleFunc("/", foo)
+	go http.HandleFunc("/", foo)
 	http.ListenAndServe(":8000", nil)
 }
 
